@@ -1,0 +1,60 @@
+@startuml
+
+hide footbox
+autonumber
+
+participant ":CamiaoRoute" as route
+participant ":CamiaoController" as controller
+participant ":CamiaoService" as service
+participant ":CamiaoRepo" as repo
+participant ":CamiaoMap" as map
+participant "camiao:Camiao" as camiao
+participant "camiaoDTO:CamiaoDTO" as dto
+
+?o-> route : "PUT(.../api/camiao/editar"
+activate route
+route -> controller : editarCamiao()
+activate controller
+controller -> service : editarCamiao()
+activate service
+service -> repo : findByMatricula(matricula)
+activate repo
+deactivate repo
+service -> camiao : set(tara)
+activate camiao
+deactivate camiao
+service -> camiao : set(capacidadeCarga)
+activate camiao
+deactivate camiao
+service -> camiao : set(tempoCarregamentoRapido)
+activate camiao
+deactivate camiao
+service -> camiao : set(cargaMaximaBaterias)
+activate camiao
+deactivate camiao
+service -> camiao : set(autonomia)
+activate camiao
+deactivate camiao
+service -> repo: save(camiao)
+activate repo
+repo -> map : toPersistence(camiao)
+activate map
+map --> repo : camiao
+deactivate map
+repo --> service : camiao
+deactivate repo 
+service -> map: toDTO(camiao)
+activate map
+map -> dto**: create()
+map --> service : camiaoDTO
+deactivate map
+service -->controller :camiaoDTO
+deactivate service
+controller --> route: camiaoDTO
+deactivate controller
+ <--route : camiaoDTO
+ deactivate route
+
+
+
+@enduml

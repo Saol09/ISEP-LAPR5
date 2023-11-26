@@ -1,0 +1,25 @@
+@startuml
+
+actor "User" as gestor
+participant "<<SPA (Browser)>>" as SYSTEM
+participant "<<Authorization Server" as SYSTEM2
+
+
+activate gestor
+gestor --> SYSTEM:  Abrir aplicação web
+activate SYSTEM
+SYSTEM -> SYSTEM: Mostrar página login
+SYSTEM -> SYSTEM2: Redirecionar para o servidor Auth
+activate SYSTEM2
+SYSTEM2 -> SYSTEM2: Mostrar página login
+gestor --> SYSTEM2: login
+SYSTEM2 -> SYSTEM: Redirecionar para SPA
+SYSTEM -> SYSTEM2: Obter access token
+SYSTEM2 -> SYSTEM: id_token e access_token
+deactivate SYSTEM2
+SYSTEM -> SYSTEM: validar id_token
+SYSTEM -> SYSTEM: login na aplicação
+deactivate SYSTEM
+SYSTEM --> gestor: Mostrar funcionalidades
+
+@enduml

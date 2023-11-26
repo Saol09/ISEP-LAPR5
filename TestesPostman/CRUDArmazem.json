@@ -1,0 +1,526 @@
+{
+	"info": {
+		"_postman_id": "9b076bbd-13c9-4e87-a5c0-dd068e53f1da",
+		"name": "Armazem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24215246"
+	},
+	"item": [
+		{
+			"name": "Valido",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Criação de armazém válido\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": \"011\",\r\n        \"designacaoArmazem\": {\r\n            \"designacao\":\"cucujaes\"\r\n        },\r\n        \"enderecoArmazem\": {\r\n            \"rua\":\"asdasdasd\",\r\n            \"porta\":\"13\",\r\n            \"cidade\":\"cucujaes\",\r\n            \"codigopostal\":\"4503-133\",\r\n            \"pais\":\"Portugal\"\r\n        },\r\n        \"coordenadasArmazem\" : {\r\n            \"latitude\":\"42\",\r\n            \"longitude\":\"14\"\r\n        }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Armazens/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Armazens",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Id invalido",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Criação de armazém com id invalido\",function(){\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": \"01\",\r\n        \"designacaoArmazem\": {\r\n            \"designacao\":\"asdasdads\"\r\n        },\r\n        \"enderecoArmazem\": {\r\n            \"rua\":\"asdasdasd\",\r\n            \"porta\":\"13\",\r\n            \"cidade\":\"cucujaes\",\r\n            \"codigopostal\":\"4503-133\",\r\n            \"pais\":\"Portugal\"\r\n        },\r\n        \"coordenadasArmazem\" : {\r\n            \"latitude\":\"42\",\r\n            \"longitude\":\"14\"\r\n        }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Armazens/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Armazens",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Descricao invalida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Descrição invalida\",function(){\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": \"018\",\r\n        \"designacaoArmazem\": {\r\n            \"designacao\":\"\"\r\n        },\r\n        \"enderecoArmazem\": {\r\n            \"rua\":\"asdasdasd\",\r\n            \"porta\":\"13\",\r\n            \"cidade\":\"cucujaes\",\r\n            \"codigopostal\":\"4503-133\",\r\n            \"pais\":\"Portugal\"\r\n        },\r\n        \"coordenadasArmazem\" : {\r\n            \"latitude\":\"42\",\r\n            \"longitude\":\"14\"\r\n        }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Armazens/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Armazens",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rua invalida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Rua invalida\",function(){\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": \"018\",\r\n        \"designacaoArmazem\": {\r\n            \"designacao\":\"asdasd\"\r\n        },\r\n        \"enderecoArmazem\": {\r\n            \"rua\":\"\",\r\n            \"porta\":\"13\",\r\n            \"cidade\":\"cucujaes\",\r\n            \"codigopostal\":\"4503-133\",\r\n            \"pais\":\"Portugal\"\r\n        },\r\n        \"coordenadasArmazem\" : {\r\n            \"latitude\":\"42\",\r\n            \"longitude\":\"14\"\r\n        }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Armazens/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Armazens",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "porta invalida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Porta invalida\",function(){\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": \"018\",\r\n        \"designacaoArmazem\": {\r\n            \"designacao\":\"asdasd\"\r\n        },\r\n        \"enderecoArmazem\": {\r\n            \"rua\":\"asdlasdalsdm\",\r\n            \"porta\":\"\",\r\n            \"cidade\":\"cucujaes\",\r\n            \"codigopostal\":\"4503-133\",\r\n            \"pais\":\"Portugal\"\r\n        },\r\n        \"coordenadasArmazem\" : {\r\n            \"latitude\":\"42\",\r\n            \"longitude\":\"14\"\r\n        }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Armazens/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Armazens",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "porta negativa",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Porta negativa\",function(){\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": \"018\",\r\n        \"designacaoArmazem\": {\r\n            \"designacao\":\"asdasd\"\r\n        },\r\n        \"enderecoArmazem\": {\r\n            \"rua\":\"asdlasdalsdm\",\r\n            \"porta\":\"-12\",\r\n            \"cidade\":\"cucujaes\",\r\n            \"codigopostal\":\"4503-133\",\r\n            \"pais\":\"Portugal\"\r\n        },\r\n        \"coordenadasArmazem\" : {\r\n            \"latitude\":\"42\",\r\n            \"longitude\":\"14\"\r\n        }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Armazens/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Armazens",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cidade invalida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Cidade invalida\",function(){\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": \"018\",\r\n        \"designacaoArmazem\": {\r\n            \"designacao\":\"asdasd\"\r\n        },\r\n        \"enderecoArmazem\": {\r\n            \"rua\":\"asdlasdalsdm\",\r\n            \"porta\":\"12\",\r\n            \"cidade\":\"\",\r\n            \"codigopostal\":\"4503-133\",\r\n            \"pais\":\"Portugal\"\r\n        },\r\n        \"coordenadasArmazem\" : {\r\n            \"latitude\":\"42\",\r\n            \"longitude\":\"14\"\r\n        }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Armazens/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Armazens",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pais invalido",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Pais invalido\",function(){\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": \"018\",\r\n        \"designacaoArmazem\": {\r\n            \"designacao\":\"asdasd\"\r\n        },\r\n        \"enderecoArmazem\": {\r\n            \"rua\":\"asdlasdalsdm\",\r\n            \"porta\":\"12\",\r\n            \"cidade\":\"asdasda\",\r\n            \"codigopostal\":\"4503-133\",\r\n            \"pais\":\"\"\r\n        },\r\n        \"coordenadasArmazem\" : {\r\n            \"latitude\":\"42\",\r\n            \"longitude\":\"14\"\r\n        }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Armazens/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Armazens",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Latitude invalida > 90",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Latitude invalida > 90\",function(){\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": \"018\",\r\n        \"designacaoArmazem\": {\r\n            \"designacao\":\"asdasd\"\r\n        },\r\n        \"enderecoArmazem\": {\r\n            \"rua\":\"asdlasdalsdm\",\r\n            \"porta\":\"12\",\r\n            \"cidade\":\"asdasda\",\r\n            \"codigopostal\":\"4503-133\",\r\n            \"pais\":\"Portugal\"\r\n        },\r\n        \"coordenadasArmazem\" : {\r\n            \"latitude\":\"200\",\r\n            \"longitude\":\"14\"\r\n        }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Armazens/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Armazens",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Latitude invalida <-90",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Latitude invalida < -90\",function(){\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": \"018\",\r\n        \"designacaoArmazem\": {\r\n            \"designacao\":\"asdasd\"\r\n        },\r\n        \"enderecoArmazem\": {\r\n            \"rua\":\"asdlasdalsdm\",\r\n            \"porta\":\"12\",\r\n            \"cidade\":\"asdasda\",\r\n            \"codigopostal\":\"4503-133\",\r\n            \"pais\":\"Portugal\"\r\n        },\r\n        \"coordenadasArmazem\" : {\r\n            \"latitude\":\"-191\",\r\n            \"longitude\":\"14\"\r\n        }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Armazens/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Armazens",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Longitude invalida > 180",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Longitude > 180 \",function(){\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": \"018\",\r\n        \"designacaoArmazem\": {\r\n            \"designacao\":\"asdasd\"\r\n        },\r\n        \"enderecoArmazem\": {\r\n            \"rua\":\"asdlasdalsdm\",\r\n            \"porta\":\"12\",\r\n            \"cidade\":\"asdasda\",\r\n            \"codigopostal\":\"4503-133\",\r\n            \"pais\":\"Portugal\"\r\n        },\r\n        \"coordenadasArmazem\" : {\r\n            \"latitude\":\"23\",\r\n            \"longitude\":\"200\"\r\n        }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Armazens/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Armazens",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Longitude < -180 \",function(){\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": \"018\",\r\n        \"designacaoArmazem\": {\r\n            \"designacao\":\"asdasd\"\r\n        },\r\n        \"enderecoArmazem\": {\r\n            \"rua\":\"asdlasdalsdm\",\r\n            \"porta\":\"12\",\r\n            \"cidade\":\"asdasda\",\r\n            \"codigopostal\":\"4503-133\",\r\n            \"pais\":\"Portugal\"\r\n        },\r\n        \"coordenadasArmazem\" : {\r\n            \"latitude\":\"23\",\r\n            \"longitude\":\"-200\"\r\n        }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Armazens/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Armazens",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

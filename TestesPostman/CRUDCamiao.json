@@ -1,0 +1,514 @@
+{
+	"id": "b0ffc4c0-05c1-41f9-b1d9-21fc2f733835",
+	"name": "LAPR5",
+	"timestamp": "2022-11-06T16:56:16.287Z",
+	"collection_id": "24215720-c90e94d7-c037-49e0-b225-7ec4f3de93f3",
+	"folder_id": "24215720-1debde59-f732-4f01-94a6-46a9eff40008",
+	"environment_id": "0",
+	"totalPass": 16,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "c35c40c2-d277-4a34-ba66-157a58df778f",
+			"name": "Teste Criar Camião Válido",
+			"url": "http://localhost:3000/api/camiao/adicionar/",
+			"time": 95,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Criação de camião válido": true
+			},
+			"testPassFailCounts": {
+				"Criação de camião válido": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				95
+			],
+			"allTests": [
+				{
+					"Criação de camião válido": true
+				}
+			]
+		},
+		{
+			"id": "b507efe8-9833-41f1-88d7-4e9892e00f6b",
+			"name": "Teste Criar Camião Inválido (Já no sistema)",
+			"url": "http://localhost:3000/api/camiao/adicionar/",
+			"time": 38,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Criação de camião inválido": true
+			},
+			"testPassFailCounts": {
+				"Criação de camião inválido": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				38
+			],
+			"allTests": [
+				{
+					"Criação de camião inválido": true
+				}
+			]
+		},
+		{
+			"id": "d9232806-9491-4ecc-95ec-d69ca1bae923",
+			"name": "Teste Criar Camião Inválido (tara < 0)",
+			"url": "http://localhost:3000/api/camiao/adicionar/",
+			"time": 3,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Criação de camião inválido": true
+			},
+			"testPassFailCounts": {
+				"Criação de camião inválido": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Criação de camião inválido": true
+				}
+			]
+		},
+		{
+			"id": "5e373274-59d6-4c97-8760-721be2d001b6",
+			"name": "Teste Criar Camião Inválido (capacidade carga < 0)",
+			"url": "http://localhost:3000/api/camiao/adicionar/",
+			"time": 3,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Criação de camião inválido": true
+			},
+			"testPassFailCounts": {
+				"Criação de camião inválido": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Criação de camião inválido": true
+				}
+			]
+		},
+		{
+			"id": "fd416a35-06a3-4133-893f-998ae82a37e0",
+			"name": "Teste Criar Camião Inválido (tempo carregamento rápido < 0)",
+			"url": "http://localhost:3000/api/camiao/adicionar/",
+			"time": 3,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Criação de camião inválido": true
+			},
+			"testPassFailCounts": {
+				"Criação de camião inválido": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Criação de camião inválido": true
+				}
+			]
+		},
+		{
+			"id": "4d17eb5a-654f-4bca-ba25-6d4d59a42081",
+			"name": "Teste Criar Camião Inválido (carga máxima baterias < 0)",
+			"url": "http://localhost:3000/api/camiao/adicionar/",
+			"time": 2,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Criação de camião inválido": true
+			},
+			"testPassFailCounts": {
+				"Criação de camião inválido": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2
+			],
+			"allTests": [
+				{
+					"Criação de camião inválido": true
+				}
+			]
+		},
+		{
+			"id": "3f20a405-7c0b-409c-924d-d57e04a52c61",
+			"name": "Teset Criar Camião Inválido (autonomia < 0)",
+			"url": "http://localhost:3000/api/camiao/adicionar/",
+			"time": 2,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Criação de camião inválido": true
+			},
+			"testPassFailCounts": {
+				"Criação de camião inválido": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2
+			],
+			"allTests": [
+				{
+					"Criação de camião inválido": true
+				}
+			]
+		},
+		{
+			"id": "2480e921-88fb-4519-a8de-36eb9a6eb26d",
+			"name": "Teste Criar Camião Inválido (matrícula com formato errado)",
+			"url": "http://localhost:3000/api/camiao/adicionar/",
+			"time": 2,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Criação de camião inválido": true
+			},
+			"testPassFailCounts": {
+				"Criação de camião inválido": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2
+			],
+			"allTests": [
+				{
+					"Criação de camião inválido": true
+				}
+			]
+		},
+		{
+			"id": "1848ed35-6b97-44e7-81a3-be10e712fe18",
+			"name": "Teste Listar Camiões",
+			"url": "http://localhost:3000/api/camiao/camioesExistentes/",
+			"time": 26,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Listagem de camiões válido": true
+			},
+			"testPassFailCounts": {
+				"Listagem de camiões válido": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				26
+			],
+			"allTests": [
+				{
+					"Listagem de camiões válido": true
+				}
+			]
+		},
+		{
+			"id": "c0c1be5b-72f1-413a-a0e6-163fdda8aa63",
+			"name": "Teste Editar Camião Válido",
+			"url": "http://localhost:3000/api/camiao/editar/",
+			"time": 81,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Edição de camião válido": true
+			},
+			"testPassFailCounts": {
+				"Edição de camião válido": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				81
+			],
+			"allTests": [
+				{
+					"Edição de camião válido": true
+				}
+			]
+		},
+		{
+			"id": "91d03415-dc62-47f3-b496-31d6f980a3bc",
+			"name": "Teste Editar Camião Inválido (camião não existe)",
+			"url": "http://localhost:3000/api/camiao/editar/",
+			"time": 31,
+			"responseCode": {
+				"code": 402,
+				"name": "Payment Required"
+			},
+			"tests": {
+				"Edição de camião inválido": true
+			},
+			"testPassFailCounts": {
+				"Edição de camião inválido": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				31
+			],
+			"allTests": [
+				{
+					"Edição de camião inválido": true
+				}
+			]
+		},
+		{
+			"id": "ccc7d670-ec34-4080-a2d8-2e03122e2333",
+			"name": "Teste Editar Camião Inválido (tara < 0)",
+			"url": "http://localhost:3000/api/camiao/editar/",
+			"time": 3,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Edição de camião inválido": true
+			},
+			"testPassFailCounts": {
+				"Edição de camião inválido": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Edição de camião inválido": true
+				}
+			]
+		},
+		{
+			"id": "8c3c6efb-17a0-44aa-a403-67c3a9675baa",
+			"name": "Teste Editar Camião Inválido (capacidade carga < 0)",
+			"url": "http://localhost:3000/api/camiao/editar/",
+			"time": 4,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Edição de camião inválido": true
+			},
+			"testPassFailCounts": {
+				"Edição de camião inválido": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Edição de camião inválido": true
+				}
+			]
+		},
+		{
+			"id": "8db9a3b6-646a-43c1-8c20-eba1b1dfba45",
+			"name": "Teste Editar Camão Inválido (tempo carregamento rápido < 0)",
+			"url": "http://localhost:3000/api/camiao/editar/",
+			"time": 3,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Edição de camião inválido": true
+			},
+			"testPassFailCounts": {
+				"Edição de camião inválido": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Edição de camião inválido": true
+				}
+			]
+		},
+		{
+			"id": "87f3100b-f548-4234-a93e-871549853147",
+			"name": "Teste Editar Camião Inválido (carga máxima baterias <0)",
+			"url": "http://localhost:3000/api/camiao/editar/",
+			"time": 3,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Edição de camião inválido": true
+			},
+			"testPassFailCounts": {
+				"Edição de camião inválido": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Edição de camião inválido": true
+				}
+			]
+		},
+		{
+			"id": "0c143b74-1b49-4317-9356-3d28da870049",
+			"name": "Teste Editar Camião Inválido (autonomia < 0)",
+			"url": "http://localhost:3000/api/camiao/editar/",
+			"time": 2,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Edição de camião inválido": true
+			},
+			"testPassFailCounts": {
+				"Edição de camião inválido": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2
+			],
+			"allTests": [
+				{
+					"Edição de camião inválido": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 301,
+	"collection": {
+		"requests": [
+			{
+				"id": "c35c40c2-d277-4a34-ba66-157a58df778f",
+				"method": "POST"
+			},
+			{
+				"id": "b507efe8-9833-41f1-88d7-4e9892e00f6b",
+				"method": "POST"
+			},
+			{
+				"id": "d9232806-9491-4ecc-95ec-d69ca1bae923",
+				"method": "POST"
+			},
+			{
+				"id": "5e373274-59d6-4c97-8760-721be2d001b6",
+				"method": "POST"
+			},
+			{
+				"id": "fd416a35-06a3-4133-893f-998ae82a37e0",
+				"method": "POST"
+			},
+			{
+				"id": "4d17eb5a-654f-4bca-ba25-6d4d59a42081",
+				"method": "POST"
+			},
+			{
+				"id": "3f20a405-7c0b-409c-924d-d57e04a52c61",
+				"method": "POST"
+			},
+			{
+				"id": "2480e921-88fb-4519-a8de-36eb9a6eb26d",
+				"method": "POST"
+			},
+			{
+				"id": "1848ed35-6b97-44e7-81a3-be10e712fe18",
+				"method": "GET"
+			},
+			{
+				"id": "c0c1be5b-72f1-413a-a0e6-163fdda8aa63",
+				"method": "PUT"
+			},
+			{
+				"id": "91d03415-dc62-47f3-b496-31d6f980a3bc",
+				"method": "PUT"
+			},
+			{
+				"id": "ccc7d670-ec34-4080-a2d8-2e03122e2333",
+				"method": "PUT"
+			},
+			{
+				"id": "8c3c6efb-17a0-44aa-a403-67c3a9675baa",
+				"method": "PUT"
+			},
+			{
+				"id": "8db9a3b6-646a-43c1-8c20-eba1b1dfba45",
+				"method": "PUT"
+			},
+			{
+				"id": "87f3100b-f548-4234-a93e-871549853147",
+				"method": "PUT"
+			},
+			{
+				"id": "0c143b74-1b49-4317-9356-3d28da870049",
+				"method": "PUT"
+			}
+		]
+	}
+}

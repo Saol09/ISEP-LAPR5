@@ -1,0 +1,27 @@
+﻿@startuml
+
+actor "Gestor de Armazém" as ga
+
+participant "<<System (C4)>>\nEletricGo" as c4
+
+activate ga
+ga -> c4: Inicia o processo de edição de um armazém 
+activate c4
+c4 --> ga: Solicita o armazém que deseja editar
+deactivate c4
+ga -> c4 : Introduz o dado solicitado
+activate c4
+c4 --> ga : Mostra a informação do armazém selecionado
+deactivate c4
+ga -> c4 : Altera informações do armazém
+activate c4
+c4 --> ga : Solicita a confirmação dos dados inseridos
+deactivate c4
+ga -> c4 : Confirma os dados
+activate c4
+c4 --> ga : Informa o sucesso da operação
+deactivate c4
+deactivate ga
+
+
+@enduml

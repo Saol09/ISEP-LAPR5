@@ -1,0 +1,49 @@
+@startuml
+autonumber
+
+participant ": Sistema" as SYSTEM
+participant ": Entrega" as ENTREGA
+participant ": EntregaController" as CTRL
+participant ": EntregaService" as SERVICE
+participant "entrega: Entrega" as E
+participant ": EntregaRepository" as REPO 
+participant ": IUnitOfWork" as IU
+participant ":EntregaDto" as DTO
+
+activate SYSTEM
+activate ENTREGA
+SYSTEM -> ENTREGA: POST
+activate CTRL
+ENTREGA -> CTRL: Create(EntregaDto dto)
+deactivate ENTREGA
+activate SERVICE
+CTRL -> SERVICE: AddAsync(dto)
+deactivate CTRL
+activate E
+SERVICE --> E: create()
+E --> SERVICE: entrega
+deactivate E
+activate REPO
+SERVICE -> REPO: AddAsync(entrega)
+deactivate REPO
+activate IU
+SERVICE -> IU: CommitAsync()
+deactivate IU
+activate DTO
+SERVICE --> DTO: create()
+DTO --> SERVICE: dto
+deactivate DTO 
+activate CTRL
+SERVICE --> CTRL:
+deactivate SERVICE
+activate ENTREGA
+CTRL -> ENTREGA:
+deactivate CTRL
+ENTREGA -> SYSTEM: success
+deactivate ENTREGA
+deactivate SYSTEM
+
+
+
+
+@enduml

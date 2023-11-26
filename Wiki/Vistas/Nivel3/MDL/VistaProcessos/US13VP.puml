@@ -1,0 +1,38 @@
+﻿@startuml
+autonumber
+
+actor "Gestor de Logística" as gl
+participant "<<System (C4)>>\nVisualização" as SYSTEM
+participant ":PlaneamentoRoute" as R
+participant ":PlaneamentoController" as CTRL
+participant ":PlaneamentoService" as SERV
+participant ":PlaneamentoRepo" as REPO
+
+activate gl
+gl -> SYSTEM:  Inicia o processo de planeamento de \n frota para 1 camião num dado dia
+activate SYSTEM
+SYSTEM --> gl: Solicita os dados necessários (data e algoritmo)
+deactivate SYSTEM
+gl -> SYSTEM : Introduz os dados solicitados
+activate SYSTEM
+SYSTEM -> R : GET(.../api/:algoritmo/:data)
+activate R
+R --> CTRL : efetuarPlaneamento()
+activate CTRL
+CTRL -> SERV: efetuarPlaneamento(data)
+activate SERV
+SERV -> REPO :algoritmo(data,camiao)
+activate REPO
+REPO --> SERV : json rota
+deactivate REPO
+SERV --> CTRL : json rota
+deactivate SERV
+CTRL --> R : 200 OK 
+deactivate CTRL
+R --> SYSTEM : 200 OK
+deactivate R
+SYSTEM --> gl: Informa o sucesso da operação
+deactivate SYSTEM
+deactivate gl
+
+@enduml

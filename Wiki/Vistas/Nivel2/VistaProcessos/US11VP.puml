@@ -1,0 +1,29 @@
+@startuml SSD US10 - Criar Percurso
+
+autonumber
+
+actor "Gestor de Logística" as GL
+participant "<<System (C4)>>\nVisualização" as SYSTEM
+participant "<<System (C4)>>\nMDL" as SYSTEM2
+
+
+activate GL
+GL -> SYSTEM : Solicita a apresentação da informação relativa a percursos
+activate SYSTEM
+alt
+SYSTEM -> SYSTEM2 : GET percursosExistentes
+activate SYSTEM2
+else
+SYSTEM -> SYSTEM2 : GET percursosArmazemPartida
+else
+SYSTEM -> SYSTEM2 : GET percursosArmazemChegada
+else
+SYSTEM -> SYSTEM2 : GET percursoPorArmazens
+end
+SYSTEM2 --> SYSTEM : percursos (JSON)
+deactivate SYSTEM2
+SYSTEM --> GL : apresenta percurso solicitado
+deactivate SYSTEM
+deactivate GL
+
+@enduml

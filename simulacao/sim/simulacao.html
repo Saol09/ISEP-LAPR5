@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>three.js webgl - orbit controls</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="main.css">
+    <style>
+        body {
+            background-color: #ccc;
+            color: #000;
+        }
+
+        a {
+            color: #f00;
+        }
+    </style>
+</head>
+
+<body>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "../three.js-master/build/three.module.js",
+            "three/addons/": "../three.js-master/examples/jsm/"
+            
+        }
+    }
+</script>
+
+    <script type="module">
+        import * as THREE from 'three';
+        import SimulacaoTemplate from '../simulacaoTemplate.js';
+
+        let simulacao;
+
+        function init() {
+            simulacao = new SimulacaoTemplate();
+        }
+
+        function animate() {
+
+            requestAnimationFrame(animate);
+            simulacao.controls.update();
+            simulacao.update();
+
+            render();
+
+
+        }
+
+        function render() {
+
+            simulacao.renderer.render(simulacao.scene, simulacao.camera);
+
+        }
+
+        init();
+        animate();
+    </script>
+
+</body>
+
+</html>

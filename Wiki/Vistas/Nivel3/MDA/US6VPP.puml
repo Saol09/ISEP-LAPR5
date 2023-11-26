@@ -1,0 +1,50 @@
+@startuml
+autonumber
+
+participant ": Sistema" as SYSTEM
+participant ": Entrega" as ENTREGA
+participant ": EntregaController" as CTRL
+participant ": EntregaService" as SERVICE
+participant "EntregaDto" as DTO
+participant ": EntregaRepository" as REPO 
+participant "Entrega" as ENT
+participant ": IUnitOfWork" as IU
+
+
+activate SYSTEM
+activate ENTREGA
+SYSTEM -> ENTREGA: PUT
+activate CTRL
+ENTREGA -> CTRL: Update(EntregaDto dto)
+activate SERVICE
+CTRL -> SERVICE: UpdateAsync(dto)
+activate REPO
+SERVICE -> REPO: GetByIdAsync(new IdentificadorEntrega(dto.IdentificadorEntrega)
+deactivate REPO
+activate ENT
+REPO --> ENT: create()
+ENT --> SERVICE:
+SERVICE -> ENT :AlterarCarga(dto.TempoCarga)
+SERVICE -> ENT :AlterarDescarga(dto.TempoDescarga)
+SERVICE -> ENT :AlterarMassaEntrega(dto.MassaEntrega)
+SERVICE -> ENT :AlterarDataEntrega(dto.DataEntrega)
+SERVICE -> ENT :AlterarArmazemEntrega(dto.ArmazemEntrega)
+deactivate ENT
+activate IU
+SERVICE -> IU :CommitAsync()
+deactivate IU
+activate DTO
+SERVICE --> DTO : create
+DTO --> SERVICE : 
+deactivate DTO
+SERVICE --> CTRL : 
+deactivate SERVICE
+CTRL --> ENTREGA:
+deactivate CTRL
+ENTREGA --> SYSTEM: success
+deactivate ENTREGA
+deactivate SYSTEM
+
+
+
+@enduml

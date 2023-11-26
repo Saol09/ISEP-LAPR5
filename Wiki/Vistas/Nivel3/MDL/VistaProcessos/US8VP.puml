@@ -1,0 +1,27 @@
+@startuml
+
+hide footbox
+autonumber
+
+participant "camiaoRoute:CamiaoRoute" as route
+participant "camiaoController:CamiaoController" as controller
+participant "camiaoService:CamiaoService" as service
+participant "truckRepo: CamiaoRepo" as repo
+
+
+?o-> route : GET(.../api/camiao/camioesExistentes)
+activate route
+route -> controller: listarCamioes()
+activate controller
+controller -> service : listarCamioes()
+activate service
+service -> repo : findAll()
+activate repo
+repo --> service : successList
+deactivate repo
+service --> controller: successList
+deactivate service
+controller --> route: successList
+<-- route : successList
+
+@enduml

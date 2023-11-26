@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="e054a16d-ca40-443f-900c-cb4a882f5e1e" name="Vasco@DESKTOP-GNBB4VQ 2022-11-06 19:06:20" runUser="DESKTOP-GNBB4VQ\Vasco" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2022-11-06T19:06:20.8317996+00:00" queuing="2022-11-06T19:06:20.8317999+00:00" start="2022-11-06T19:06:20.3976759+00:00" finish="2022-11-06T19:06:20.8321904+00:00" />
+  <TestSettings name="default" id="12db84c8-57b6-4525-b174-39177fd67f6a">
+    <Deployment runDeploymentRoot="Vasco_DESKTOP-GNBB4VQ_2022-11-06_19_06_20" />
+  </TestSettings>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="0" executed="0" passed="0" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+</TestRun>

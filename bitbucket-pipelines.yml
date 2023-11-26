@@ -1,0 +1,50 @@
+pipelines:
+  default:
+    - parallel:
+        - step:
+            name: Build and Test .NET
+            image: mcr.microsoft.com/dotnet/sdk:6.0
+            caches:
+              - dotnetcore
+            script:
+              - cd MasterDataArmazens
+              - dotnet build
+        #              - dotnet test
+        - step:
+            name: Build NodeJS
+            image: node:18.12.1
+            caches:
+              - node
+            script:
+              - cd MasterDataLogistica
+              - npm install
+        - step:
+            name: Build ReactJS
+            image: node:18.12.1
+            caches:
+              - node
+            script:
+              - cd visualizacao
+              - npm install --save --legacy-peer-deps
+              - npm install -g node-modules
+              - npm install three --save --legacy-peer-deps
+              - npm install @types/three --save-dev --legacy-peer-deps
+              - npm install react-google-login --legacy-peer-deps
+              - npm run build
+              - apt-get update
+              - apt-get install zip
+              - zip -r /opt/atlassian/pipelines/agent/build/visualizacao.zip . -x .git bitbucket-pipelines.yml
+            artifacts:
+              - '*.zip'
+              - build/**
+    - step:
+        name: Deployment
+        script:
+          - pipe: atlassian/azure-web-apps-deploy:1.1.0
+            variables:
+              AZURE_APP_ID: $AZURE_APP_ID
+              AZURE_PASSWORD: $AZURE_PASSWORD
+              AZURE_TENANT_ID: $AZURE_TENANT_ID
+              AZURE_RESOURCE_GROUP: $AZURE_RESOURCE_GROUP
+              AZURE_APP_NAME: $AZURE_APP_NAME
+              ZIP_FILE: 'visualizacao.zip'

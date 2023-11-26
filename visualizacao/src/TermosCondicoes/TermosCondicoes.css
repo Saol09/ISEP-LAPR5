@@ -1,0 +1,39 @@
+.termos {
+	width: 80%;
+	height: 100vh;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.termos-info {
+	width: 100%;
+	border-radius: 10px;
+	overflow: hidden;
+	padding: 40px 55px 33px 55px;
+	box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.back-btn {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+    padding-top: 20px;
+	padding-bottom: 13px;
+}
+
+.btn-back {
+	font-size: 15px;
+	border: none;
+	border-radius: 10px;
+	color: #fff;
+	line-height: 1.2;
+	text-transform: uppercase;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 15%;
+	height: 50px;
+	background: linear-gradient(to left, #9340ff, #ff3c5f);
+}

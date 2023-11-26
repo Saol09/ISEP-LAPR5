@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.ListarEntrega {
+
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    background: #101728;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    color: white;
+    padding-right: 10%;
+    border: 3px solid green;
+
+}
+
+.EntregaTableContainer {
+    width: 60%;
+    border: 3px solid pink;
+}
+
+
+.dropdown-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    border: none;
+    background: none;
+    outline: none;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.armEnt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    border: none;
+    background: none;
+    outline: none;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.parent {
+    display: flex;
+    /* habilita o flexbox */
+    justify-content: space-between;
+    /* distribui os elementos filhos igualmente no espaço disponível */
+    /* código CSS para estilizar o elemento .dropdown */
+}
+
+.dropdown {
+    display: flex;
+    /* habilita o flexbox */
+    justify-content: space-between;
+    /* distribui os elementos filhos igualmente no espaço disponível */
+    /* código CSS para estilizar o elemento .dropdown */
+}
+
+.entrega-input {
+    display: flex;
+    /* habilita o flexbox */
+    justify-content: space-between;
+    /* distribui os elementos filhos igualmente no espaço disponível */
+    /* código CSS para estilizar o elemento .entrega-input */
+}

@@ -1,0 +1,56 @@
+﻿@startuml
+
+autonumber
+
+participant ":PercursoRoute" as R
+participant ":PercursoController" as CTRL
+participant ":PercursoService" as SERV
+participant ":ArmazemRepo" as AREPO
+participant "percurso:Percurso" as P
+participant ":PercursoRepo" as REPO
+participant ":PercursoMap" as MAP
+participant "percursoPer:IPercursoPersistence" as PP
+participant ":Model<IPercursoPersistence & Document>" as MPP
+participant "newPercurso: Percurso" as NP
+participant "newDTO: IPercursoDTO" as DTO
+
+?o->R : POST(.../api/percurso/adicionar)
+activate R
+    R->CTRL: criarPercurso()
+    activate CTRL
+        CTRL->SERV: criarPercurso(dto)
+        activate SERV
+            SERV -> REPO: findByArmazens(armazemPartida, armazemChegada)
+            activate REPO
+            deactivate REPO
+            SERV -> AREPO: findAll()
+            activate AREPO
+            AREPO --> SERV: armazensExistentes
+            deactivate AREPO
+            SERV -> SERV: armazemExiste(armazemPartida,armazemChegada, armazensExistentes)
+            SERV-> P**: create()
+            SERV-> REPO: save(percurso)
+            activate REPO
+                REPO->MAP: toPersistence(percurso)
+                activate MAP
+                    MAP->PP**: create()
+                deactivate MAP
+                REPO->MPP: create(percursoPer)
+                activate MPP
+                deactivate MPP
+                REPO->MAP: toDomain(percursoPer)
+                activate MAP
+                    MAP->NP**: create()
+                deactivate MAP  
+            deactivate REPO
+            SERV-> MAP: toDTO(newPercurso)
+            activate MAP
+                MAP-> DTO**: create()
+            deactivate MAP
+            SERV--> CTRL : Success(newDTO)
+        deactivate SERV
+        CTRL-->R: Success(newDTO)
+    deactivate CTRL
+    <--R: Success(newDTO)
+deactivate R
+@enduml

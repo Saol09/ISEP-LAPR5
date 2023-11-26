@@ -1,0 +1,28 @@
+@startuml
+autonumber
+hide footbox
+
+actor "Gestor de Frota" as gestor
+participant "<<System (C4)>>\nVisualização" as SYSTEM
+participant "<<System (C4)>>\nMDL" as SYSTEM2
+
+activate gestor
+gestor -> SYSTEM:  Inicia o processo de edição do camião
+activate SYSTEM
+SYSTEM --> gestor: Solicita os dados necessários para a edição
+deactivate SYSTEM
+gestor -> SYSTEM : Introduz os dados solicitados
+activate SYSTEM 
+SYSTEM --> gestor: Solicita a confirmação dos dados da edição
+deactivate SYSTEM
+gestor -> SYSTEM : Confirma os dados da edição
+activate SYSTEM 
+SYSTEM -> SYSTEM2 : PUT camiao
+activate SYSTEM2
+SYSTEM2 --> SYSTEM : camiao (JSON)
+deactivate SYSTEM2
+SYSTEM --> gestor: Apresenta a informação pedida
+deactivate SYSTEM
+deactivate gestor
+
+@enduml

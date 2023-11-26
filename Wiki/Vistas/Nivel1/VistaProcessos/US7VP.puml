@@ -1,0 +1,24 @@
+@startuml
+
+hide footbox
+
+actor "Gestor de Frota" as gf
+participant "<<System (C4)>>\nEletricGo" as c4
+
+activate gf
+
+gf -> c4: Inicia o processo de registo de um camião
+activate c4
+c4 --> gf: Solicita os dados necessários para o registo
+deactivate c4
+gf -> c4:  Introduz os dados solicitados
+activate c4
+c4 --> gf: Solicita confirmação dos dados de registo
+deactivate c4
+gf -> c4: Confirma os dados do registo
+activate c4
+c4 --> gf: Informa o sucesso da operação
+deactivate c4
+deactivate gf
+
+@enduml

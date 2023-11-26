@@ -1,0 +1,44 @@
+@startuml SD US11 - Todos Os Percursos
+
+autonumber
+
+participant "PercursoRoute" as ROUTE
+participant ":PercursoController" as CTRL
+participant ":PercursoService" as SERVICE
+participant ":PercursoRepo" as REPO
+participant "PercursoMap" as MAP
+participant "PercursoDTO" as DTO
+
+
+
+
+
+?o->ROUTE : GET(.../api/percurso/percursosPorArmazens/:idArmazemP/:idArmazemC
+activate ROUTE
+ROUTE -> CTRL : getPercursosByArmazens()
+activate CTRL
+CTRL -> SERVICE : listarPercursosByArmazens(idArmazemP,idArmazemC)
+activate SERVICE
+
+SERVICE -> REPO : findByArmazens(idArmazemP, idArmazemC)
+activate REPO
+REPO --> SERVICE : percurso
+deactivate REPO
+
+SERVICE -> MAP : percursoDTO = toDTO(percurso)
+activate MAP
+MAP --> DTO** : create()
+deactivate MAP
+
+
+
+SERVICE --> CTRL : percursoDTO
+deactivate SERVICE
+CTRL --> ROUTE : percursoDTO
+<-- ROUTE : percursoDTO
+
+
+
+
+
+@enduml

@@ -1,0 +1,33 @@
+﻿@startuml
+autonumber
+
+actor "Gestor de Logística" as gl
+participant "<<System (C4)>>\nVisualização" as SYSTEM
+participant "<<System (C4)>>\nMDA" as MDA
+participant "<<System (C4)>>\nMDL" as SYSTEM2
+
+activate gl
+gl -> SYSTEM:  Inicia o processo de registo de um percurso
+activate SYSTEM
+SYSTEM --> gl: Solicita os dados necessários para o registo
+deactivate SYSTEM
+gl -> SYSTEM : Introduz os dados solicitados
+activate SYSTEM 
+SYSTEM --> gl: Solicita a confirmação dos dados de registo
+deactivate SYSTEM
+gl -> SYSTEM : Confirma os dados do registo
+activate SYSTEM
+SYSTEM -> MDA : GET armazens
+activate MDA
+MDA --> SYSTEM : armazensExistentes
+deactivate MDA
+SYSTEM -> SYSTEM2 : POST percurso
+activate SYSTEM2
+SYSTEM2 -> SYSTEM2 : criarPercurso(percurso)
+SYSTEM2 --> SYSTEM : percurso publicado 
+deactivate SYSTEM2
+SYSTEM --> gl: Informa o sucesso da operação
+deactivate SYSTEM
+deactivate gl
+
+@enduml

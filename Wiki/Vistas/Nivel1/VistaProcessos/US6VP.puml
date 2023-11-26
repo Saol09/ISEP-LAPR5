@@ -1,0 +1,28 @@
+@startuml
+
+hide footbox
+
+actor "Gestor de Frota" as gf
+participant "<<System (C4)>>\nEletricGo" as c4
+
+activate gf
+gf -> c4: Editar uma entrega
+activate c4
+c4 --> gf: Solicita a entrega que deseja editar
+deactivate c4
+gf -> c4: Introduz os dados solicitados
+activate c4
+c4 --> gf : Mostra a informação da entrega 
+deactivate c4
+gf -> c4 : Altera informações da entrega
+activate c4
+c4 --> gf : Solicita a confirmação dos dados inseridos
+deactivate c4
+gf -> c4 : Confirma os dados
+activate c4
+c4 --> gf : Informa o sucesso da operação
+deactivate c4
+deactivate gf
+
+
+@enduml

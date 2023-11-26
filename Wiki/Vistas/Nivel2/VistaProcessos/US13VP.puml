@@ -1,0 +1,28 @@
+﻿@startuml
+autonumber
+
+actor "Gestor de Logística" as gl
+participant "<<System (C4)>>\nVisualização" as SYSTEM
+participant "<<System (C4)>>\nMDL" as MDL
+participant "<<System (C4)>>\nPlaneamento" as Planeamento
+
+activate gl
+gl -> SYSTEM:  Inicia o processo de planeamento de \n frota para 1 camião num dado dia
+activate SYSTEM
+SYSTEM --> gl: Solicita os dados necessários (data e algoritmo)
+deactivate SYSTEM
+gl -> SYSTEM : Introduz os dados solicitados
+activate SYSTEM
+SYSTEM -> MDL : GET planeamento
+activate MDL
+MDL --> Planeamento : GET planeamento
+activate Planeamento
+Planeamento --> MDL : planeamento (json)
+deactivate Planeamento
+MDL --> SYSTEM : planeamento (json)
+deactivate MDL
+SYSTEM --> gl: Informa o sucesso da operação
+deactivate SYSTEM
+deactivate gl
+
+@enduml

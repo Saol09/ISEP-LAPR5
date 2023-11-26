@@ -1,0 +1,15 @@
+@startuml
+
+hide footbox
+
+actor "Gestor de Frota" as gf
+participant "<<System (C4)>>\nEletricGo" as c4
+
+activate gf
+gf -> c4: Solicita a apresentação dos camiões existentes
+activate c4
+c4 -->gf: Apresenta a informação pedida
+deactivate c4
+deactivate gf 
+
+@enduml

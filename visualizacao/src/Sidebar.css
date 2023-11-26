@@ -1,0 +1,37 @@
+.sidebar {
+	position: fixed;
+	width: 25%;
+	height: 100vh;
+	background: linear-gradient(to left, #9340ff, #ff3c5f);
+	font-size: 15px;
+	color: white;
+}
+
+.nav {
+	position: relative;
+	margin: 0 15%;
+	text-align: left;
+	top: 45%;
+	transform: translateY(-50%);
+	font-weight: bold;
+}
+
+.nav ul {
+	list-style: none;
+}
+
+li {
+	align-items: center;
+	justify-content: center;
+	margin: 3.2em 0;
+}
+
+a {
+	line-height: 5em;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 0.4em;
+	color: white;
+	display: block;
+	transition: all ease-out 300ms;
+}

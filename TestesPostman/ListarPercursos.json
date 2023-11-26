@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "530abe39-28d3-4f41-8389-8a9980f5a2e4",
+		"name": "Percurso - Listar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24265137"
+	},
+	"item": [
+		{
+			"name": "listar todos os percursos existentes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Listar todos os percursos existentes no sistema\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/percurso/percursosExistentes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"percurso",
+						"percursosExistentes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar percursos de determinado armazém de partida válido",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Listar percursos de determinado armazém de partida válido\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/percurso/percursosArmazemPartida/001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"percurso",
+						"percursosArmazemPartida",
+						"001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar percursos de determinado armazém de chegada",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Listar percursos de determinado armazém de chegada\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/percurso/percursosArmazemChegada/002",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"percurso",
+						"percursosArmazemChegada",
+						"002"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar percurso de determinado armazém de partida e chegada válidos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Listar percurso de determinado armazém de partida e chegada válidos\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/percurso/percursosPorArmazens/001/003",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"percurso",
+						"percursosPorArmazens",
+						"001",
+						"003"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar percurso de determinado armazém de partida e chegada inválidos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Listar percurso de determinado armazém de partida e chegada inválidos\",function(){\r",
+							"    pm.response.to.have.status(402);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/percurso/percursosPorArmazens/001/a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"percurso",
+						"percursosPorArmazens",
+						"001",
+						"a"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

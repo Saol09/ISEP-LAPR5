@@ -1,0 +1,21 @@
+@startuml
+
+actor "Gestor de Armazem" as gestor
+
+participant "<<System (C4)>>\nEletricGo" as c4
+
+activate gestor
+gestor -> c4: Criar de uma entrega
+activate c4
+c4 --> gestor: Solicita os dados 
+deactivate c4
+gestor -> c4 : Insere os dados 
+activate c4
+c4 --> gestor : Solicita Confirmação
+deactivate c4
+gestor -> c4 : Confirma Dados
+activate c4
+c4 --> gestor : Informa o sucesso da operação
+deactivate c4
+deactivate gestor
+@enduml

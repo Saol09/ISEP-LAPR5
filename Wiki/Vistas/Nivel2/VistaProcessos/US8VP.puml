@@ -1,0 +1,20 @@
+@startuml
+autonumber
+hide footbox
+
+actor "Gestor de Frota" as gl
+participant "<<System (C4)>>\nVisualização" as SYSTEM
+participant "<<System (C4)>>\nMDL" as SYSTEM2
+
+activate gl
+gl -> SYSTEM:  Solicita a apresentação da informação relativa a percursos 
+activate SYSTEM
+SYSTEM -> SYSTEM2 : GET camioesExistentes
+activate SYSTEM2
+SYSTEM2 --> SYSTEM : camioes (JSON)
+deactivate SYSTEM2
+SYSTEM --> gl: Apresenta a informação pedida
+deactivate SYSTEM
+deactivate gl
+
+@enduml

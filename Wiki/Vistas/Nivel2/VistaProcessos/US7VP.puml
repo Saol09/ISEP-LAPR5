@@ -1,0 +1,29 @@
+@startuml
+autonumber
+hide footbox
+
+actor "Gestor de Frota" as gf
+participant "<<System (C4)>>\nVisualização" as SYSTEM
+participant "<<System (C4)>>\nMDL" as SYSTEM2
+
+activate gf
+gf -> SYSTEM:  Inicia o processo de registo de um camião
+activate SYSTEM
+SYSTEM --> gf: Solicita os dados necessários para o registo
+deactivate SYSTEM
+gf -> SYSTEM : Introduz os dados solicitados
+activate SYSTEM 
+SYSTEM --> gf: Solicita a confirmação dos dados de registo
+deactivate SYSTEM
+gf -> SYSTEM : Confirma os dados do registo
+activate SYSTEM 
+SYSTEM -> SYSTEM2 : POST camião
+activate SYSTEM2
+SYSTEM2 -> SYSTEM2 : criarCamião(camião)
+SYSTEM2 --> SYSTEM : camião publicado 
+deactivate SYSTEM2
+SYSTEM --> gf: Informa o sucesso da operação
+deactivate SYSTEM
+deactivate gf
+
+@enduml

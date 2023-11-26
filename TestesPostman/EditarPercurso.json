@@ -1,0 +1,268 @@
+{
+	"info": {
+		"_postman_id": "281e20c4-a674-4978-9a28-5009d62ba143",
+		"name": "Percurso",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24265137"
+	},
+	"item": [
+		{
+			"name": "Editar percurso com informação válida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Edição de percurso válida\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"armazemPartida\":\"001\",\r\n  \"armazemChegada\":\"002\",\r\n  \"distancia\": 53,\r\n  \"tempoPercurso\": 122,\r\n  \"tempoExtra\": 0,\r\n  \"energiaGasta\": 42\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/percurso/editar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"percurso",
+						"editar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tentativa de edição do id do armazém",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Tentativa de edição do id do armazém\",function(){\r",
+							"    pm.response.to.have.status(402);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"armazemPartida\":\"001\",\r\n  \"armazemChegada\":\"001\",\r\n  \"distancia\": 53,\r\n  \"tempoPercurso\": 122,\r\n  \"tempoExtra\": 0,\r\n  \"energiaGasta\": 42\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/percurso/editar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"percurso",
+						"editar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edição de um percurso com distância inválida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Edição de um percurso com distância inválida\",function(){\r",
+							"    pm.response.to.have.status(500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"armazemPartida\":\"001\",\r\n  \"armazemChegada\":\"002\",\r\n  \"distancia\": null,\r\n  \"tempoPercurso\": 122,\r\n  \"tempoExtra\": 0,\r\n  \"energiaGasta\": 42\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/percurso/editar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"percurso",
+						"editar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edição de um percurso com tempo de percurso inválido",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Edição de um percurso com tempo de percurso inválido\",function(){\r",
+							"    pm.response.to.have.status(500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"armazemPartida\":\"001\",\r\n  \"armazemChegada\":\"002\",\r\n  \"distancia\": 53,\r\n  \"tempoPercurso\": -10,\r\n  \"tempoExtra\": 0,\r\n  \"energiaGasta\": 42\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/percurso/editar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"percurso",
+						"editar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edição de um percurso com energia gasta inválida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Edição de um percurso com energia gasta inválida\",function(){\r",
+							"    pm.response.to.have.status(500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"armazemPartida\":\"001\",\r\n  \"armazemChegada\":\"002\",\r\n  \"distancia\": 53,\r\n  \"tempoPercurso\": 122,\r\n  \"tempoExtra\": 0,\r\n  \"energiaGasta\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/percurso/editar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"percurso",
+						"editar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edição de um percurso com tempo extra inválido",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Edição de um percurso com tempo extra inválido\",function(){\r",
+							"    pm.response.to.have.status(500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"armazemPartida\":\"001\",\r\n  \"armazemChegada\":\"002\",\r\n  \"distancia\": 53,\r\n  \"tempoPercurso\": 122,\r\n  \"tempoExtra\": null,\r\n  \"energiaGasta\": 42\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/percurso/editar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"percurso",
+						"editar"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

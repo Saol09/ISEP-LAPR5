@@ -1,0 +1,16 @@
+﻿@startuml
+
+actor "Gestor de Logística" as gl
+
+participant "<<System (C4)>>\nEletricGo" as c4
+
+activate gl
+gl -> c4: Solicita a apresentação da informação relativa a percursos 
+activate c4
+c4 --> gl: Apresenta a informação pedida
+
+deactivate c4
+deactivate gl
+
+
+@enduml

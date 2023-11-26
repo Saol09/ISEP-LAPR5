@@ -1,0 +1,45 @@
+@startuml
+autonumber
+
+participant ": Sistema" as SYSTEM
+participant ": Entrega" as ENTREGA
+participant ": EntregaController" as CTRL
+participant ": EntregaService" as SERVICE
+participant "listDto : List<EntregaDto>" as LIST
+participant ": EntregaRepository" as REPO 
+participant "list : List<TEntity> " as ENTITY
+
+
+activate SYSTEM
+activate ENTREGA
+SYSTEM -> ENTREGA: GET
+activate CTRL
+ENTREGA -> CTRL: GetAll()
+deactivate ENTREGA
+activate SERVICE
+CTRL -> SERVICE: GetAllAsync()
+deactivate CTRL
+activate REPO
+SERVICE -> REPO: GetAllAsync()
+activate ENTITY
+REPO --> ENTITY: create()
+deactivate ENTITY
+REPO --> SERVICE: list
+deactivate REPO
+activate LIST
+SERVICE --> LIST: list.convertAll<EntregaDto>()
+LIST --> SERVICE: 
+deactivate LIST
+activate CTRL
+SERVICE --> CTRL:
+deactivate SERVICE
+activate ENTREGA
+CTRL --> ENTREGA:
+deactivate CTRL
+ENTREGA --> SYSTEM: success
+deactivate ENTREGA
+deactivate SYSTEM
+
+
+
+@enduml

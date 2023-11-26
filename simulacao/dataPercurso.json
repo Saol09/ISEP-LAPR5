@@ -1,0 +1,74 @@
+[
+    {
+        "idPartida": "001",
+        "idChegada": "002"
+    },
+    {
+        "idPartida": "002",
+        "idChegada": "007"
+    },
+    {
+        "idPartida": "002",
+        "idChegada": "008"
+    },
+    {
+        "idPartida": "003",
+        "idChegada": "010"
+    },
+    {
+        "idPartida": "004",
+        "idChegada": "001"
+    },
+    {
+        "idPartida": "005",
+        "idChegada": "017"
+    },
+    {
+        "idPartida": "006",
+        "idChegada": "009"
+    },
+    {
+        "idPartida": "007",
+        "idChegada": "017"
+    },
+    {
+        "idPartida": "008",
+        "idChegada": "009"
+    },
+    {
+        "idPartida": "009",
+        "idChegada": "001"
+    },
+    {
+        "idPartida": "010",
+        "idChegada": "013"
+    },
+    {
+        "idPartida": "011",
+        "idChegada": "014"
+    },
+    {
+        "idPartida": "012",
+        "idChegada": "016"
+    },
+    {
+        "idPartida": "013",
+        "idChegada": "007"
+    },
+    {
+        "idPartida": "014",
+        "idChegada": "005"
+    },
+    {
+        "idPartida": "015",
+        "idChegada": "003"
+    },
+    {
+        "idPartida": "016",
+        "idChegada": "002"
+    },
+    {
+        "idPartida": "017",
+        "idChegada": "008"
+    }
+]

@@ -1,0 +1,34 @@
+@startuml SSD US10 - Criar Percurso
+
+autonumber
+
+
+actor "Gestor de Logística" as GL
+participant "<<System (C4)>>\nVisualização" as SYSTEM
+participant "<<System (C4)>>\nMDL" as SYSTEM2
+
+
+activate GL
+GL -> SYSTEM : Inicia o processo de listar viagens
+activate SYSTEM
+SYSTEM --> GL : Solicita os dados necessários
+deactivate SYSTEM
+GL -> SYSTEM :  Introduz os dados solicitados
+activate SYSTEM
+SYSTEM --> GL : Solicita a confirmação dos dados
+deactivate SYSTEM
+GL -> SYSTEM : Confirma os dados
+activate SYSTEM
+SYSTEM -> SYSTEM2 : GET listarViagens
+activate SYSTEM2
+SYSTEM2 -> SYSTEM2 : viagens (JSON)
+deactivate SYSTEM2
+SYSTEM --> GL :Informa o sucesso da operação
+deactivate SYSTEM
+
+
+
+
+deactivate GL
+
+@enduml

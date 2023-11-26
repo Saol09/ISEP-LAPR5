@@ -1,0 +1,30 @@
+@startuml
+autonumber
+
+actor "Gestor de Frota" as ga
+participant "<<System (C4)>>\nVisualização" as viz
+participant "<<System (C4)>>\nMDL" as MDL
+
+activate ga
+ga -> viz: Inicia o processo de listar camiões
+activate viz
+viz -> MDL : GET camioesExistentes
+activate MDL
+MDL --> viz : camioes (JSON)
+deactivate MDL
+viz --> ga: Apresenta a lista de camiões existentes no sistema com os dados e respetivo estado
+deactivate viz
+ga -> viz : Seleciona um camião que quer inibir (clicando no botão disable)
+activate viz
+viz -> MDL : PUT camiaoInibido
+activate MDL
+deactivate MDL
+viz -> MDL : GET camioesExistentes
+activate MDL
+MDL --> viz : camioes (JSON)
+deactivate MDL
+viz --> ga : O camião selecionado aparece como desativo
+deactivate viz
+deactivate ga
+
+@enduml

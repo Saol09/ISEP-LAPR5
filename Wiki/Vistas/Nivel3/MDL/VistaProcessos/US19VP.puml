@@ -1,0 +1,39 @@
+@startuml SSD US10 - Criar Percurso
+
+autonumber
+participant ":ViagensRoute" as ROUTE
+participant ":ViagensController" as CTRL
+participant ":ViagensService" as SERVICE
+participant ":ViagensRepo" as REPO
+participant ":ViagensMap" as MAP
+participant "viagens:Viagens" as PERCURSO
+participant "viagensDTO:IViagensDTO" as DTO
+
+
+
+?o->ROUTE : GET(.../api/planeamento/listAllViagens
+activate ROUTE
+ROUTE -> CTRL : getAllViagens()
+activate CTRL
+CTRL -> SERVICE : listAllViagens()
+activate SERVICE
+activate REPO
+REPO --> SERVICE : viagens
+deactivate REPO
+
+SERVICE -> MAP : viagensDTO = toDTO(viagens)
+activate MAP
+MAP --> DTO** : create()
+deactivate MAP
+
+
+
+SERVICE --> CTRL : viagensDTO
+deactivate SERVICE
+CTRL --> ROUTE : viagensDTO
+<-- ROUTE : viagensDTO
+
+
+
+
+@enduml

@@ -1,0 +1,359 @@
+{
+	"info": {
+		"_postman_id": "5d941b00-22b8-46f3-8da1-d0badc9a3e1c",
+		"name": "LAPR5",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24265137"
+	},
+	"item": [
+		{
+			"name": "Percurso",
+			"item": [
+				{
+					"name": "criação de percurso válido",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Criação de percurso válido\",function(){\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"armazemPartida\":\"001\",\r\n  \"armazemChegada\":\"002\",\r\n  \"distancia\": 53,\r\n  \"tempoPercurso\": 122,\r\n  \"tempoExtra\": 0,\r\n  \"energiaGasta\": 42\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/percurso/adicionar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"percurso",
+								"adicionar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "criação de percurso com os dois identificadores dos armazens inválidos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Criação de percurso com os dois identificadores dos armazens invalidos\",function(){\r",
+									"    pm.response.to.have.status(402);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"armazemPartida\":\"Espinho\",\r\n  \"armazemChegada\":\"Arouca\",\r\n  \"distancia\": 53,\r\n  \"tempoPercurso\": 122,\r\n  \"tempoExtra\": 0,\r\n  \"energiaGasta\": 42\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/percurso/adicionar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"percurso",
+								"adicionar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "criação de percurso já existente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Criação de percurso já existente no sistema\",function(){\r",
+									"    pm.response.to.have.status(402);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"armazemPartida\":\"001\",\r\n  \"armazemChegada\":\"003\",\r\n  \"distancia\": 57,\r\n  \"tempoPercurso\": 122,\r\n  \"tempoExtra\": 0,\r\n  \"energiaGasta\": 46\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/percurso/adicionar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"percurso",
+								"adicionar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "criação de percurso com um indentificador do armazém inválido",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Criação de percurso com um identificador do armazem invalido\",function(){\r",
+									"    pm.response.to.have.status(402);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"armazemPartida\":\"Espinho\",\r\n  \"armazemChegada\":\"001\",\r\n  \"distancia\": 53,\r\n  \"tempoPercurso\": 122,\r\n  \"tempoExtra\": 0,\r\n  \"energiaGasta\": 42\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/percurso/adicionar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"percurso",
+								"adicionar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "criação de percurso com distância num estado inválido",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Criação de percurso com distância num estado inválido\",function(){\r",
+									"    pm.response.to.have.status(500);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"armazemPartida\":\"003\",\r\n  \"armazemChegada\":\"009\",\r\n  \"distancia\": null,\r\n  \"tempoPercurso\": 122,\r\n  \"tempoExtra\": 0,\r\n  \"energiaGasta\": 42\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/percurso/adicionar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"percurso",
+								"adicionar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "criação de percurso com tempo percurso em estado inválido",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Criação de percurso com tempo de percurso num estado inválido\",function(){\r",
+									"    pm.response.to.have.status(500);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"armazemPartida\":\"003\",\r\n  \"armazemChegada\":\"009\",\r\n  \"distancia\": 53,\r\n  \"tempoPercurso\": \"tempo\",\r\n  \"tempoExtra\": 0,\r\n  \"energiaGasta\": 42\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/percurso/adicionar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"percurso",
+								"adicionar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "criação de percurso com tempo extra num estado inválido",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Criação de percurso com tempo extra num estado inválido\",function(){\r",
+									"    pm.response.to.have.status(402);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"armazemPartida\":\"003\",\r\n  \"armazemChegada\":\"009\",\r\n  \"distancia\": 50,\r\n  \"tempoPercurso\": 122,\r\n  \"tempoExtra\": -10,\r\n  \"energiaGasta\": 42\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/percurso/adicionar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"percurso",
+								"adicionar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "criação de percurso com energia gasta num estado inválido",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Criação de percurso com energia gasta num estado inválido\",function(){\r",
+									"    pm.response.to.have.status(500);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"armazemPartida\":\"003\",\r\n  \"armazemChegada\":\"009\",\r\n  \"distancia\": 50,\r\n  \"tempoPercurso\": 122,\r\n  \"tempoExtra\": 0,\r\n  \"energiaGasta\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/percurso/adicionar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"percurso",
+								"adicionar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

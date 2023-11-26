@@ -1,0 +1,18 @@
+@startuml
+
+actor "Gestor de Frota" as ga
+
+participant "<<System (C4)>>\nEletricGo" as c4
+
+activate ga
+ga -> c4: Inicia o processo de listar camiões
+activate c4
+c4 --> ga: Apresenta a lista de camiões existentes no sistema com os dados e respetivo estado
+deactivate c4
+ga -> c4 : Seleciona um camião que quer inibir (clicando no botão disable)
+activate c4
+c4 --> ga : O camião selecionado aparece como desativo
+deactivate c4
+deactivate ga
+
+@enduml

@@ -1,0 +1,56 @@
+@startuml
+
+autonumber
+hide footbox
+
+participant ": CamiaoRoute" as Route
+participant ": CamiaoController" as Controller
+participant ": CamiaoService" as Service
+participant "camiao:Camiao" as Camiao
+participant ": CamiaoRepo" as Repo
+participant ": CamiaoMapC" as MapC
+participant "camiaoPer:ICamiaoPersistence" as Persistance
+participant ":Model<ICamiaoPersistence & Document>" as Model
+participant "newCamiao:Camiao" as New
+participant "newDTO:ICamiaoDTO" as DTO
+
+
+?o-> Route : POST(.../api/camiao/adicionar)
+activate Route
+Route -> Controller: criarCamiao()
+activate Controller
+Controller->Service: criarCamiao(dto)
+activate Service
+Service->Repo: findByDomainId(id)
+activate Repo
+deactivate Repo
+Service -> Camiao** : create()
+Service -> Repo : save(camiao)
+activate Repo
+Repo -> MapC: toPersistence(camiao)
+activate MapC
+deactivate MapC
+Repo -> Persistance**: create()
+Repo -> Model : create(camiaoPer)
+activate Model
+deactivate Model
+Repo -> MapC : toDomain(camiaoPer)
+deactivate Repo
+activate MapC
+MapC -> New** : create()
+deactivate MapC
+Service -> MapC : toDto(newCamiao)
+activate MapC
+MapC -> DTO** : create()
+deactivate MapC
+Service --> Controller : Sucess(newDTO)
+deactivate Service
+Controller --> Route : Sucess(newDTO)
+deactivate Controller
+<-- Route:Sucess(newDTO)
+deactivate Route
+
+
+
+
+@enduml

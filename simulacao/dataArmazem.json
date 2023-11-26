@@ -1,0 +1,308 @@
+[
+    {
+        "id": "001",
+        "designacaoArmazem": {
+            "designacao": "Arouca"
+        },
+        "enderecoArmazem": {
+            "rua": "Rua de Arouca",
+            "porta": "13",
+            "cidade": "Arouca",
+            "codigopostal": "4544-001",
+            "pais": "Portugal"
+        },
+        "coordenadasArmazem": {
+            "latitude": 40.9321,
+            "longitude": 8.2451,
+            "altitude": 250.0
+        }
+    },
+    {
+        "id": "002",
+        "designacaoArmazem": {
+            "designacao": "Espinho"
+        },
+        "enderecoArmazem": {
+            "rua": "Rua de Espinho",
+            "porta": "17",
+            "cidade": "Espinho",
+            "codigopostal": "4501-123",
+            "pais": "Portugal"
+        },
+        "coordenadasArmazem": {
+            "latitude": 41.0072,
+            "longitude": 8.641,
+            "altitude": 550.0
+        }
+    },
+    {
+        "id": "003",
+        "designacaoArmazem": {
+            "designacao": "Gondomar"
+        },
+        "enderecoArmazem": {
+            "rua": "Rua de Gondomar",
+            "porta": "11",
+            "cidade": "Gondomar",
+            "codigopostal": "4350-111",
+            "pais": "Portugal"
+        },
+        "coordenadasArmazem": {
+            "latitude": 42.1115,
+            "longitude": 8.7613,
+            "altitude": 200.0
+        }
+    },
+    {
+        "id": "004",
+        "designacaoArmazem": {
+            "designacao": "Maia"
+        },
+        "enderecoArmazem": {
+            "rua": "Rua de Maia",
+            "porta": "11",
+            "cidade": "Maia",
+            "codigopostal": "4360-111",
+            "pais": "Portugal"
+        },
+        "coordenadasArmazem": {
+            "latitude": 41.2279,
+            "longitude": 8.621,
+            "altitude": 700.0
+        }
+    },
+    {
+        "id": "005",
+        "designacaoArmazem": {
+            "designacao": "Matosinhos"
+        },
+        "enderecoArmazem": {
+            "rua": "Rua de Matosinhos",
+            "porta": "11",
+            "cidade": "Matosinhos",
+            "codigopostal": "4360-111",
+            "pais": "Portugal"
+        },
+        "coordenadasArmazem": {
+            "latitude": 41.1844,
+            "longitude": 8.6963,
+            "altitude": 350.0
+        }
+    },
+    {
+        "id": "006",
+        "designacaoArmazem": {
+            "designacao": "Oliveira de Azeméis"
+        },
+        "enderecoArmazem": {
+            "rua": "Rua de Oliveira de Azeméis",
+            "porta": "15",
+            "cidade": "Oliveira de Azeméis",
+            "codigopostal": "4290-145",
+            "pais": "Portugal"
+        },
+        "coordenadasArmazem": {
+            "latitude": 40.8387,
+            "longitude": 8.477,
+            "altitude": 750.0
+        }
+    },
+    {
+        "id": "007",
+        "designacaoArmazem": {
+            "designacao": "Paredes"
+        },
+        "enderecoArmazem": {
+            "rua": "Rua de Paredes",
+            "porta": "123",
+            "cidade": "Paredes",
+            "codigopostal": "4290-155",
+            "pais": "Portugal"
+        },
+        "coordenadasArmazem": {
+            "latitude": 41.2052,
+            "longitude": 8.3304,
+            "altitude": 0.0
+        }
+    },
+    {
+        "id": "008",
+        "designacaoArmazem": {
+            "designacao": "Porto"
+        },
+        "enderecoArmazem": {
+            "rua": "Rua de Porto",
+            "porta": "101",
+            "cidade": "Porto",
+            "codigopostal": "4214-135",
+            "pais": "Portugal"
+        },
+        "coordenadasArmazem": {
+            "latitude": 41.1579,
+            "longitude": 8.6291,
+            "altitude": 600.0
+        }
+    },
+    {
+        "id": "009",
+        "designacaoArmazem": {
+            "designacao": "Póvoa de Varzim"
+        },
+        "enderecoArmazem": {
+            "rua": "Rua de Póvoa de Varzim",
+            "porta": "145",
+            "cidade": "Póvoa de Varzim",
+            "codigopostal": "4214-135",
+            "pais": "Portugal"
+        },
+        "coordenadasArmazem": {
+            "latitude": 41.3804,
+            "longitude": 8.7609,
+            "altitude": 400.0
+        }
+    },
+    {
+        "id": "010",
+        "designacaoArmazem": {
+            "designacao": "Santa Maria da Feira"
+        },
+        "enderecoArmazem": {
+            "rua": "Rua de Santa Maria da Feira",
+            "porta": "05",
+            "cidade": "Santa Maria da Feira",
+            "codigopostal": "4535-111",
+            "pais": "Portugal"
+        },
+        "coordenadasArmazem": {
+            "latitude": 40.9268,
+            "longitude": 8.5483,
+            "altitude": 100.0
+        }
+    },
+    {
+        "id": "011",
+        "designacaoArmazem": {
+            "designacao": "Santo Tirso"
+        },
+        "enderecoArmazem": {
+            "rua": "Rua de Santo Tirso",
+            "porta": "55",
+            "cidade": "Santo Tirso",
+            "codigopostal": "4123-161",
+            "pais": "Portugal"
+        },
+        "coordenadasArmazem": {
+            "latitude": 41.3431,
+            "longitude": 8.4738,
+            "altitude": 650.0
+        }
+    },
+    {
+        "id": "012",
+        "designacaoArmazem": {
+            "designacao": "São João da Madeira"
+        },
+        "enderecoArmazem": {
+            "rua": "Rua de São João da Madeira",
+            "porta": "515",
+            "cidade": "São João da Madeira",
+            "codigopostal": "4121-009",
+            "pais": "Portugal"
+        },
+        "coordenadasArmazem": {
+            "latitude": 40.9005,
+            "longitude": 8.4907,
+            "altitude": 300.0
+        }
+    },
+    {
+        "id": "013",
+        "designacaoArmazem": {
+            "designacao": "Trofa"
+        },
+        "enderecoArmazem": {
+            "rua": "Rua de Trofa",
+            "porta": "131",
+            "cidade": "Trofa",
+            "codigopostal": "4521-111",
+            "pais": "Portugal"
+        },
+        "coordenadasArmazem": {
+            "latitude": 41.3391,
+            "longitude": 8.56,
+            "altitude": 450.0
+        }
+    },
+    {
+        "id": "014",
+        "designacaoArmazem": {
+            "designacao": "Vale de Cambra"
+        },
+        "enderecoArmazem": {
+            "rua": "Rua de Vale de Cambra",
+            "porta": "19",
+            "cidade": "Vale de Cambra",
+            "codigopostal": "4521-111",
+            "pais": "Portugal"
+        },
+        "coordenadasArmazem": {
+            "latitude": 40.843,
+            "longitude": 8.3956,
+            "altitude": 50.0
+        }
+    },
+    {
+        "id": "015",
+        "designacaoArmazem": {
+            "designacao": "Valongo"
+        },
+        "enderecoArmazem": {
+            "rua": "Rua de Valongo",
+            "porta": "19",
+            "cidade": "Valongo",
+            "codigopostal": "4199-123",
+            "pais": "Portugal"
+        },
+        "coordenadasArmazem": {
+            "latitude": 41.1887,
+            "longitude": 8.4983,
+            "altitude": 800.0
+        }
+    },
+    {
+        "id": "016",
+        "designacaoArmazem": {
+            "designacao": "Vila do Conde"
+        },
+        "enderecoArmazem": {
+            "rua": "Rua de Vila do Conde",
+            "porta": "11",
+            "cidade": "Vila do Conde",
+            "codigopostal": "4912-134",
+            "pais": "Portugal"
+        },
+        "coordenadasArmazem": {
+            "latitude": 41.3517,
+            "longitude": 8.7479,
+            "altitude": 150.0
+        }
+    },
+    {
+        "id": "017",
+        "designacaoArmazem": {
+            "designacao": "Vila Nova de Gaia"
+        },
+        "enderecoArmazem": {
+            "rua": "Rua de Vila Nova de Gaia",
+            "porta": "151",
+            "cidade": "Vila Nova de Gaia",
+            "codigopostal": "4871-312",
+            "pais": "Portugal"
+        },
+        "coordenadasArmazem": {
+            "latitude": 41.1239,
+            "longitude": 8.6118,
+            "altitude": 500.0
+        }
+    }
+]

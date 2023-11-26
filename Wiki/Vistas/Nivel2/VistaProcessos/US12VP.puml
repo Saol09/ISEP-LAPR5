@@ -1,0 +1,35 @@
+@startuml SSD US10 - Criar Percurso
+
+autonumber
+
+
+actor "Gestor de Logística" as GL
+participant "<<System (C4)>>\nVisualização" as SYSTEM
+participant "<<System (C4)>>\nMDL" as SYSTEM2
+
+
+activate GL
+GL -> SYSTEM : Inicia o processo de edição de um percurso
+activate SYSTEM
+SYSTEM --> GL : Solicita os dados a serem alterados
+deactivate SYSTEM
+GL -> SYSTEM : Altera informações do percurso
+activate SYSTEM
+SYSTEM --> GL : Solicita a confirmação dos dados inseridos
+deactivate SYSTEM
+GL -> SYSTEM : Confirma os dados
+activate SYSTEM
+SYSTEM -> SYSTEM2 : PUT percurso
+activate SYSTEM2
+SYSTEM2 -> SYSTEM2 : editarPercurso(percurso)
+SYSTEM2 --> SYSTEM : percurso editado
+deactivate SYSTEM2
+SYSTEM --> GL :Informa o sucesso da operação
+deactivate SYSTEM
+
+
+
+
+deactivate GL
+
+@enduml

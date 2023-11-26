@@ -1,0 +1,57 @@
+@startuml SSD US10 - Criar Percurso
+
+autonumber
+participant ":PercursoRoute" as ROUTE
+participant ":PercursoController" as CTRL
+participant ":PercursoService" as SERVICE
+participant ":PercursoRepo" as REPO
+participant ":PercursoMap" as MAP
+participant "percurso:Percurso" as PERCURSO
+participant "percursoDTO:IPercursoDTO" as DTO
+
+
+
+?o->ROUTE : PUT(.../api/percurso/editar)
+activate ROUTE
+ROUTE -> CTRL : editarPercurso()
+activate CTRL
+CTRL -> SERVICE : editarPercurso()
+activate SERVICE
+SERVICE -> REPO : findByArmazens(armazemPartida,armazemChegada)
+activate REPO
+deactivate REPO
+SERVICE -> PERCURSO : set(distancia)
+activate PERCURSO
+deactivate PERCURSO
+SERVICE -> PERCURSO : set(tempoPercurso
+activate PERCURSO
+deactivate PERCURSO
+SERVICE -> PERCURSO : set(tempoExtra)
+activate PERCURSO 
+deactivate PERCURSO
+SERVICE -> PERCURSO : set(energiaGasta)
+activate PERCURSO 
+deactivate PERCURSO
+SERVICE -> REPO : save(percurso)
+activate REPO
+REPO -> MAP : toPersistence(percurso)
+activate MAP
+MAP --> REPO : percurso
+deactivate MAP
+REPO --> SERVICE : percurso
+deactivate REPO
+SERVICE -> MAP : toDTO(percurso)
+activate MAP
+MAP -> DTO** :  create()
+MAP --> SERVICE : percursoDTO
+deactivate MAP
+SERVICE --> CTRL : percursoDTO
+deactivate SERVICE
+CTRL --> ROUTE : percursoDTO
+<--ROUTE : percursoDTO
+
+
+
+
+
+@enduml
